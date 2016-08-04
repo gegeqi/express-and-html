@@ -18,15 +18,16 @@ let actions = [
 
 let router=new Router(actions);
 
-router.start();
+console.log(router.start().help);
 
 repl.start({prompt: '> ', eval: handleInput});
 
 function handleInput(cmd, context, filename, callback) {
     router.handle(cmd.trim());
-    router.start();
+    console.log(router.start().help);
     callback();
 }
+
 
 
 

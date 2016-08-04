@@ -13,7 +13,7 @@ class Router {
         this.currentAction = router.doAction(cmd);
     }
     start() {
-        console.log(this.action.find(v => v.name === this.currentAction).help);
+        return this.action.find(v => v.name === this.currentAction);
     }
 }
 
