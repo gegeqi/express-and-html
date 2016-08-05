@@ -1,38 +1,20 @@
-/**
- * Created by wanggenwang on 16-7-29.
- */
 'use strict';
-//noinspection JSUnresolvedFunction
-const Router = require('./Router.js');
-//noinspection JSUnresolvedFunction,NodeJsCodingAssistanceForCoreModules
-const repl = require('repl');
+let Router = require('./Router.js');
+let repl = require('repl');
+let help = require('./help');
+let router = new Router('init');
 
-let BarcodeAction = require('./actions/BarcodeAction.js');
-let InitAction = require('./actions/InitAction.js');
-let PostcodeAction = require('./actions/PostcodeAction.js');
-let actions = [
-    new BarcodeAction(),
-    new InitAction(),
-    new PostcodeAction()
-];
+help(input => console.log(input));
 
-let router=new Router(actions);
-
-console.log(router.start().help);
-
-repl.start({prompt: '> ', eval: handleInput});
-
-function handleInput(cmd, context, filename, callback) {
-    router.handle(cmd.trim());
-    console.log(router.start().help);
-    callback();
-}
-
-
-
-
-
-
+repl.start({
+    prompt: '>',
+    eval: (cmd, context, filename, callback) => {
+        let outputAndExit = function (input) {
+            callback(null, input);
+        };
+        router.run(cmd.trim(), outputAndExit);
+    }
+});
 
 
 

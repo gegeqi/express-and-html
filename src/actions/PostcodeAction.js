@@ -1,30 +1,24 @@
-/**
- * Created by wanggenwang on 16-8-1.
- */
-//let ZIPTransformer = require('../core/ZIPTransformer.js');
 let agent = require('superagent');
+let help = require('../help.js');
 
 class PostcodeAction {
-    constructor() {
-        this.name = 'postcode';
-        this.help = `
-Please input postcode
-or input q to quit:`.trim();
-    };
-
-    doAction(cmd) {
+    doAction(cmd,output,currentState) {
         switch (cmd) {
             case 'q':
-                return 'init';
+                currentState.value = 'init';
+                help(output);
                 break;
             default:
                 agent
                     .get('localhost:3000/zipcode')
                     .query({code:cmd})
                     .end(function (error, response) {
-                        console.log( cmd + ' => ' + response.text);
+                       console.log( cmd + ' => ' + response.text);
+                        //output( cmd + ' => ' + response.text);
+                        output('please input postcode or input q to quit:');
                     });
-                return 'postcode';
+                //output('please input postcode or input q to quit:');
+                break;
         }
     }
 }

@@ -1,29 +1,21 @@
-/**
- * Created by wanggenwang on 16-8-1.
- */
-
 class InitAction{
-    constructor(){
-        this.name='init';
-        this.help=`
-Welcome
-1 - postcode
-2 - barcode
-3 - quit`.trim();
-    }
-    doAction(cmd) {
+    doAction(cmd, output, currentState) {
         switch (cmd) {
             case '1':
-                return 'postcode';
+                currentState.value = 'postcode';
+                output('please input postcode or input q to quit:');
                 break;
             case '2':
-                return 'barcode';
+                currentState.value = 'barcode';
+                output('please input barcode or input q to quit:');
                 break;
             case '3':
+                output('goodbye');
                 process.exit();
+                break;
             default:
-                console.log('Input error\n');
-                return 'init';
+                currentState.value = 'init';
+                output('Input error');
         }
     }
 }
