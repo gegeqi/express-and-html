@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## 说明
 
 1. fork本repo到自己的github
@@ -12,3 +13,8 @@
 2. 新的创建
 3. 一步切换
 4. 旧的再见
+=======
+# express-and-html
+
+这里写的是express连接html的code.
+>>>>>>> 79b56ff365da7f392033c14bce7355a55de00cfa
