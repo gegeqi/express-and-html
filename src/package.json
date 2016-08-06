@@ -9,6 +9,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "cors": "^2.7.1",
     "superagent": "^2.1.0"
+  },
+  "dependencies": {
+    "cors": "^2.7.1"
   }
 }

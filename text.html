@@ -1,20 +1,21 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+
     <script src="./node_modules/jquery/dist/jquery.js"></script>
     <script>
-        $(document).ready(function () {
-            $('button').click(function () {
-                alert('value:'+$('#test').val());
-            })
-        })
+       $(document).ready(function () {
+           $('button').click(function () {
+              $.get('http://localhost:3000/zipcode?code=52525',function (data,status) {
+                   console.log(data.zipcode)
+              })
+           })
+       })
     </script>
 </head>
 <body>
-    <p>姓名：<input type="text" id="test" value="米老鼠"></p>
-    <button>显示值</button>
+
+<button>check out</button>
+
 </body>
 </html>
