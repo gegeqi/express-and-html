@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>>
+    <script>
+        $(document).ready(function(){
+            //$(".btn").click(function(){
+               // alert("Value: " + $("#input_code").val());
+           // });
+            $('.btn').click(function () {
+                $('.return').text('12121212')
+            })
+        });
+    </script>
+
+
+
+
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="demo.css"/>
+    <title>POST-NET</title>
+
+    <style type="text/css">
+       body{
+            border: 3px solid;
+            margin:10% 30%;
+            text-align: center;
+            color: #8a4182;
+        }
+    </style>
+</head>
+<body>
+<h1 class="center-block" style="text-align: center;background-color: #666666">POST-NET</h1>
+<section id="translator">
+    <form id="translator_form" role="form" ; style="text-align: center;margin-top: 30px">
+        <label for="input_code">Input_Code</label>
+        <input type="text" id="input_code" name="input_code" placeholder="Please input code here"/></p>
+        <span class="help-block">hahahahahahahahahaha</span>
+    </form>
+    <div id="result" style="text-align: center">
+        <span>Result</span>
+        <span class="return">:|::|</span>
+    </div>
+    <div style="text-align: center;margin-top: 20px">
+        <label class="checkbox-inline">
+            <input type="radio" form="translator_form" name="radio" value="bababa"
+                   checked/>Barcode to Zipcode
+        </label>
+        <label class="checkbox-inline">
+            <input type="radio" form="translator_form" name="radio" value="bababa"/>Zipcode to Barcode
+        </label>
+    </div>
+    <p style="text-align: center;margin-top: 20px">
+        <button type="button"  class="btn" style="color: #ca3a11">OK</button>
+    </p>
+</section>
+
+<section style="text-align: center">
+    <h2 class="center-block">History</h2>
+    <table class="table">
+        <tr class="active">
+            <td>Code</td>
+            <td>Result</td>
+        </tr>
+        <tr>
+            <td>blah blah</td>
+            <td>blah blah</td>
+        </tr>
+        <tr>
+            <td>blah blah</td>
+            <td>blah blah</td>
+        </tr>
+    </table>
+</section>
+
+
+
+</body>
+</html>

@@ -9,13 +9,14 @@ class InitAction{
                 currentState.value = 'barcode';
                 output('please input barcode or input q to quit:');
                 break;
-            case '3':
-                output('goodbye');
+            case 'q':
+                //output('goodbye');
                 process.exit();
                 break;
             default:
                 currentState.value = 'init';
                 output('Input error');
+                break;
         }
     }
 }

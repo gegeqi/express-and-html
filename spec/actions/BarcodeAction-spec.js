@@ -2,27 +2,22 @@
  * Created by wanggenwang on 16-8-1.
  */
 "use strict";
-let BarcodeAction = require('../../src/actions/BarcodeAction.js');
+let barcodeAction = require('../../src/actions/BarcodeAction.js');
 
-describe('BarcodeAction',()=>{
-    let barcodeAction;
-    beforeEach(()=>{
-        barcodeAction = new BarcodeAction();
+describe("barcodeDoaction",function () {
+    let barcode =new  barcodeAction();
+    fit("barcodeAction",function () {
+        let cmd = 'q';
+        let output = jasmine.createSpy("spy");
+        let currentState= jasmine.createSpy("spy");
+        barcode.doAction(cmd,output,currentState);
+        expect(output).toHaveBeenCalledWith(`
+Welcome
+1 - postcode
+2 - barcode
+3 - quit`.trim());
     });
-    it('doAction q',()=>{
-        let result = barcodeAction.doAction('q');
-        expect(result).toEqual('init');
-    });
-    it('doAction barcode',()=>{
-        let result = barcodeAction.doAction('| :::|| ::|:| ::||: :|::| :|:|: :|:|: |');
-        expect(result).toEqual('barcode');
-    });
-    it('doAction default',()=>{
-        let result = barcodeAction.doAction('*****');
-        expect(result).toEqual('barcode');
-    });
-});
-
+})
 
 
 

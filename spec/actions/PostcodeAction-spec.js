@@ -1,24 +1,19 @@
 /**
  * Created by wanggenwang on 16-8-2.
  */
-let PostcodeAction = require('../../src/actions/PostcodeAction.js');
+let postcodeAction = require('../../src/actions/PostcodeAction.js');
 
-describe('PostcodeAction', ()=> {
-    let postcodeAction;
-    beforeEach(()=> {
-        postcodeAction = new PostcodeAction();
+describe("postcodeDoaction",function () {
+    let postcode =new  postcodeAction();
+    fit("postcodeAction",function () {
+        let cmd = 'q';
+        let output = jasmine.createSpy("spy");
+        let currentState= jasmine.createSpy("spy");
+        postcode.doAction(cmd,output,currentState);
+        expect(output).toHaveBeenCalledWith(`
+Welcome
+1 - postcode
+2 - barcode
+3 - quit`.trim());
     });
-    it('doAction q', ()=> {
-        let result = postcodeAction.doAction('q');
-        expect(result).toEqual('init');
-    });
-    it('doAction postcode', ()=> {
-        let result = postcodeAction.doAction('12345');
-        expect(result).toEqual('postcode');
-    });
-    it('doAction default', ()=> {
-        let result = postcodeAction.doAction('*****');
-        expect(result).toEqual('postcode');
-    });
-});
-
+})
